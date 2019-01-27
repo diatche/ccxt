@@ -731,7 +731,7 @@ class bitstamp (Exchange):
         response = self.privatePostOpenOrdersAll(params)
         result = []
         for i in range(0, len(response)):
-            order = self.parse_order(response[i], market, since, limit)
+            order = self.parse_order(response[i], market)
             result.append(self.extend(order, {
                 'status': 'open',
                 'type': 'limit',
